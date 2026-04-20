@@ -1,6 +1,6 @@
 ---
 title: Hexo 博客多格式元素指南
-date: 2026-04-20 23:30:00
+date: 2026-04-20 23:33:00
 tags: [Hexo, Butterfly, Markdown]
 categories: 教程
 description: 本文展示了如何在 Hexo 博客中优雅地呈现代码、数学公式、图片、链接以及其他常用格式。
