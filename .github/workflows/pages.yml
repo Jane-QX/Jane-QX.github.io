@@ -42,7 +42,7 @@ jobs:
       - name: Deploy
         run: |
           # 确保禁用 GitHub Pages 的默认 Jekyll 构建
-          touch source/.nojekyll
+          touch public/.nojekyll
           npx hexo clean
           npx hexo generate
           npx hexo deploy
