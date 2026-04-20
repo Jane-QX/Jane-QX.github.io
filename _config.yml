@@ -1,0 +1,63 @@
+# Hexo & Butterfly 统一配置模板
+# 建议直接覆盖博客根目录下的 _config.yml 文件内容
+
+# =================================================================
+# 1. 站点基础设置 (Site Settings)
+# =================================================================
+title: Jane's Blog           # 博客标题
+subtitle: '记录成长与思考'     # 博客副标题
+description: ''               # 网站描述
+author: Jane                  # 作者名字
+language: zh-CN               # 语言 (简体中文必须设为 zh-CN)
+timezone: 'Asia/Shanghai'     # 时区
+url: https://esemsc-qx224.github.io       # 你的博客网址
+
+# =================================================================
+# 2. 主题与扩展 (Theme & Extensions)
+# =================================================================
+theme: butterfly              # 使用 Butterfly 主题
+
+# =================================================================
+# 3. Butterfly 主题个性化配置 (Theme Specific Settings)
+# 这里的内容等同于 _config.butterfly.yml 中的配置
+# =================================================================
+theme_config:
+  # 顶部图片设置 (Banner)
+  index_img: /img/my_bg.jpg         # 首页顶部背景图
+  default_top_img: /img/my_bg.jpg   # 默认页面顶部图
+  
+  # 导航栏设置
+  nav:
+    logo:                           # 导航栏左侧 Logo
+    display_title: true             # 是否显示站点标题
+  
+  # 网站背景设置
+  # background: "#fff" 或 "url(/img/bg.jpg)"
+  background: 
+
+  # 页脚设置
+  footer_img: false                 # 页脚背景图 (true/false/图片路径)
+
+# =================================================================
+# 4. 其他高级设置 (Advanced Settings)
+# 通常保持默认即可，除非你有特殊需求
+# =================================================================
+new_post_name: :title.md
+default_layout: post
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+per_page: 10
+pagination_dir: page
+
+# =================================================================
+# 5. 部署设置 (Deployment)
+# =================================================================
+deploy:
+  type: git
+  repo: git@github.com:esemsc-qx224/esemsc-qx224.github.io.git
+  branch: main
