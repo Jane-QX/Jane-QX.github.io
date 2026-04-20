@@ -42,7 +42,7 @@ theme_config:
 deploy:
   type: git
   repo: git@github.com:Jane-QX/Jane-QX.github.io.git
-  branch: main
+  branch: gh-pages
 
 # =================================================================
 # 5. 其他高级设置 (Advanced Settings)
