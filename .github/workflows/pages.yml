@@ -1,15 +1,13 @@
 name: Hexo Deploy
-
 on:
   push:
     branches:
-      - main # 监控 main 分支的推送
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # 强制使用 Node 24 解决弃用警告
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24' # 升级到最新的 Node 24
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -34,15 +32,19 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-      - name: Setup Git infomation
+      - name: Setup Git information
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
       - name: Deploy
         run: |
-          # 确保禁用 GitHub Pages 的默认 Jekyll 构建
-          touch public/.nojekyll
           npx hexo clean
           npx hexo generate
+          
+          # 必须在这里创建 .nojekyll
+          mkdir -p public
+          touch public/.nojekyll
+          echo "GitHub Pages deployment - $(date)" > public/.nojekyll
+          
           npx hexo deploy
