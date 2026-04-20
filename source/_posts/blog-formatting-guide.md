@@ -1,5 +1,5 @@
 ---
-title: Hexo 博客多格式排版指南
+title: Hexo 博客多格式元素指南
 date: 2026-04-20 16:30:00
 tags: [Hexo, Butterfly, Markdown]
 categories: 教程
